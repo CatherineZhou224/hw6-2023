@@ -22,29 +22,30 @@ document.querySelector("#pause").addEventListener("click", function () {
 
 document.querySelector("#slower").addEventListener("click", function () {
   console.log("Slower Speed");
-  slowClick += 1;
-  var currentSpeed = video.playbackRate;
-  var newSpeed = currentSpeed - 0.1;
-  video.playbackRate = Math.max(0.1, newSpeed);
-  console.log(slowClick);
+  video.playbackRate *= 0.9;
+  // slowClick += 1;
+  // var currentSpeed = video.playbackRate;
+  // var newSpeed = currentSpeed - 0.1;
+  // video.playbackRate = Math.max(0.1, newSpeed);
+  // console.log(slowClick);
   console.log("speed is:", video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function () {
   console.log("Faster Speed");
-  var currentSpeed = video.playbackRate;
-  if (slowClick > 0) {
-    var increaseSpeed = 0.1 * Math.pow(0.9, slowClick - 1);
-    var newSpeed = currentSpeed + increaseSpeed;
-    video.playbackRate = newSpeed;
-    slowClick--;
-    console.log(slowClick);
-    console.log("speed is:", video.playbackRate);
-  } else {
-    var newSpeed = currentSpeed + 0.1;
-    video.playbackRate = newSpeed;
-    console.log("speed is:", video.playbackRate);
-  }
+  video.playbackRate /= 0.9;
+  // var currentSpeed = video.playbackRate;
+  // if (slowClick > 0) {
+  //   var increaseSpeed = 0.1 * Math.pow(0.9, slowClick - 1);
+  //   var newSpeed = currentSpeed + increaseSpeed;
+  //   video.playbackRate = newSpeed;
+  //   slowClick--;
+  //   console.log(slowClick);
+  //   console.log("speed is:", video.playbackRate);
+  // } else {
+  //   var newSpeed = currentSpeed + 0.1;
+  //   video.playbackRate = newSpeed;
+  console.log("speed is:", video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function () {
